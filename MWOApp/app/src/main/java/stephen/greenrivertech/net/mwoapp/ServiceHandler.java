@@ -4,7 +4,6 @@ package stephen.greenrivertech.net.mwoapp;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ import java.net.URL;
 /**
  * Created by Stephen on 4/26/2016.
  */
-public class ServiceHandler{
+public class ServiceHandler {
 
     private static final String DEBUG_TAG = "HttpExample";
     private TextView textView;
@@ -27,16 +26,17 @@ public class ServiceHandler{
 
     /**
      * Constructor
+     *
      * @param textView
      * @param activity
      */
-   public ServiceHandler(String stringUrl, TextView textView, Activity activity){
-       this.textView = textView;
-       this.activity = activity;
-       this.stringUrl = stringUrl;
-   }
+    public ServiceHandler(String stringUrl, TextView textView, Activity activity) {
+        this.textView = textView;
+        this.activity = activity;
+        this.stringUrl = stringUrl;
+    }
 
-    public void InitiateDownload(){
+    public void InitiateDownload() {
 
         new DownloadWebpageTask().execute(stringUrl);
     }
@@ -67,8 +67,8 @@ public class ServiceHandler{
     }
 
     // Given a URL, establishes an HttpUrlConnection and retrieves
-// the web page content as a InputStream, which it returns as
-// a string.
+    // the web page content as a InputStream, which it returns as
+    // a string.
     private String downloadUrl(String myurl) throws IOException {
         InputStream is = null;
         // Only display the first 500 characters of the retrieved
